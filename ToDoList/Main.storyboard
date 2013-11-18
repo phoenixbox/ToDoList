@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--View Controller - Add To-Do Item-->
+        <!--Add To Do Item View Controller - Add To-Do Item-->
         <scene sceneID="BO2-I3-0h6">
             <objects>
-                <viewController title="Add To-Do Item" id="lGU-r2-zqC" sceneMemberID="viewController">
+                <viewController title="Add To-Do Item" id="lGU-r2-zqC" customClass="XYZAddToDoItemViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7dd-Zf-9lJ"/>
                         <viewControllerLayoutGuide type="bottom" id="VYM-TM-3mf"/>
@@ -46,10 +46,10 @@
             </objects>
             <point key="canvasLocation" x="1643" y="479"/>
         </scene>
-        <!--Table View Controller - ToDoApp-->
+        <!--To Do List View Controller - ToDoApp-->
         <scene sceneID="evp-3B-OIV">
             <objects>
-                <tableViewController title="ToDoApp" id="oQf-E4-T3V" sceneMemberID="viewController">
+                <tableViewController title="ToDoApp" id="oQf-E4-T3V" customClass="XYZToDoListViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="8eV-69-3gO">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
