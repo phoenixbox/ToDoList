@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--View Controller - Add To-Do Item-->
         <scene sceneID="BO2-I3-0h6">
             <objects>
-                <viewController id="lGU-r2-zqC" sceneMemberID="viewController">
+                <viewController title="Add To-Do Item" id="lGU-r2-zqC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7dd-Zf-9lJ"/>
                         <viewControllerLayoutGuide type="bottom" id="VYM-TM-3mf"/>
@@ -22,7 +22,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New-To-Do Item" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iy7-md-2Qb">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New-To-Do Item" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iy7-md-2Qb">
                                 <rect key="frame" x="20" y="149" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -31,16 +31,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="5ti-tX-Vt0" firstAttribute="top" secondItem="7dd-Zf-9lJ" secondAttribute="bottom" constant="129" id="Iu7-x1-v4Q"/>
+                            <constraint firstItem="5ti-tX-Vt0" firstAttribute="top" secondItem="7dd-Zf-9lJ" secondAttribute="bottom" constant="149" id="Iu7-x1-v4Q"/>
                             <constraint firstItem="Iy7-md-2Qb" firstAttribute="leading" secondItem="4mg-fo-ICA" secondAttribute="leading" constant="20" id="LGe-sy-zmf"/>
-                            <constraint firstItem="Iy7-md-2Qb" firstAttribute="top" secondItem="7dd-Zf-9lJ" secondAttribute="bottom" constant="129" id="LoQ-dd-Aaj"/>
+                            <constraint firstItem="Iy7-md-2Qb" firstAttribute="top" secondItem="7dd-Zf-9lJ" secondAttribute="bottom" constant="149" id="LoQ-dd-Aaj"/>
                             <constraint firstAttribute="trailing" secondItem="Iy7-md-2Qb" secondAttribute="trailing" constant="20" id="Uag-gr-Tp8"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Add To-Do Item" id="GSo-qC-xLH">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="RJh-f3-Wdv"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="4tq-t9-pMH"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VNB-KN-Jc2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1117" y="479"/>
+            <point key="canvasLocation" x="1643" y="479"/>
         </scene>
         <!--Table View Controller - ToDoApp-->
         <scene sceneID="evp-3B-OIV">
@@ -335,7 +339,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="ToDoApp" id="lLa-L6-6aU">
                         <barButtonItem key="backBarButtonItem" title="Yes" id="g1U-5W-Vq4"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Oa6-vB-Azm"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Oa6-vB-Azm">
+                            <connections>
+                                <segue destination="va4-lJ-4bX" kind="modal" id="jmk-5M-v9v"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                 </tableViewController>
@@ -360,6 +368,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AR3-ax-ynh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="145" y="479"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Imn-Xc-gH4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="va4-lJ-4bX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EY9-67-5Ma">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="lGU-r2-zqC" kind="relationship" relationship="rootViewController" id="6gC-9A-Q1L"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H1T-jy-eGa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1160" y="479"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
