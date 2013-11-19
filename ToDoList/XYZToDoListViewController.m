@@ -7,8 +7,11 @@
 //
 
 #import "XYZToDoListViewController.h"
+#import "XYZToDoItem.h"
 
 @interface XYZToDoListViewController ()
+
+@property NSMutableArray *toDoItems;
 
 @end
 
@@ -31,12 +34,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.toDoItems = [[NSMutableArray alloc]init];
+    
+    [self loadInitialData];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)loadInitialData {
+    XYZToDoItem *item1 = [[XYZToDoItem alloc]init];
+    item1.itemName = @"Get A Haircut";
+    [self.toDoItems addObject:item1];
+    XYZToDoItem *item2 = [[XYZToDoItem alloc]init];
+    item2.itemName = @"But A Phone";
+    [self.toDoItems addObject:item2];
+    XYZToDoItem *item3 = [[XYZToDoItem alloc]init];
+    item3.itemName = @"Fix Bike";
+    [self.toDoItems addObject:item3];
 }
 
 - (void)didReceiveMemoryWarning
